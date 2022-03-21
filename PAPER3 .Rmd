@@ -1,0 +1,138 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+------
+title: "Canadian Labour Force With a Focus on Student"
+author: "Yijia Lu"
+date: "20/03/2022"
+output: pdf_document
+abstract: This report uses data from the Statistics Canada. The study focuses on the
+  unemployment rate and the employment rates for the students in Canada.The study
+  aims at evaluating employment rate of all the students in Canada at large. The major
+  focus is on the students who participated on the employment opportunities across
+  the Canadian government. As discussed below, the data shows a given number of students
+  of both sex having been engaged in the employment activities in the country. The
+  study zooms in the aspect of the individuals of age 15 to 24 years old from October
+  21st to 22nd February. This study mainly focused on both full and part time students
+  in the area.
+bilbiography: mybibfile.bib
+thanks: 'Code and Data are available at: https://github.com/luyijia1/PAPER3.git'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo =FALSE )
+install.packages("knitr")
+library(knitr)
+```
+
+# INTRODUCTION
+In most cases students are seen as people having less time to do other activities apart from the class work. In relation to that, there has been a lot of neglect on student jobs across the globe. However in Canada, a survey conducted indicated that the students actually take part in activities that aid to their survival. the percentage that indicated a high employment rate was the non students followed by the part time students. 
+This shows that the part time students could actually use their free time to maneuver and do some part time activities in their area of residence or another place. This data is key in determining the actual work force of the country in earns of the per capital income. In addition the participation rate to the general survey was the key in determining the actual figures during the exercise.This is key to avoid heaping of data on a certain bracket during the study. 
+A pilot study was done in order to identify this students who were engaging themselves with the labor force of the country. One of the most techniques that were used included the sampling techniques as the data given was a representation of the entire population. the data was given in terms of percentages to illustrate what is the margin of those students and nonstudents working in different parts of Canada. 
+
+# DATA
+## UNEMPLOYMENT RATE
+The data on the unemployment rates shows that the students who were engaged in the employment activities were actually less than those who were not engaged in the activities. This is shown as below. The data also has different variables of which the student enrollment is included in the data, as well as the months as from October to February. The purpose is to help the analysis of the data be more convenient and more obvious.
+
+```{r}
+students<-c("students and non-students","Students","Full-time students","Part-time students","Non-students")
+October<-c("9.6","9.3","9.3","9.5","9.9")
+November<-c("9.7","8.3","8","10.2","11.1")
+December<-c("8.9","7.2","7","8.7","10.7")
+January<-c("13.7","12.5","12.6","12.4","14.7")
+February<-c("10.8","8.6","8.5","9.9","13")
+students<-data.frame(students,October,November,December,January,February)
+students
+knitr::kable(students,"pipe",align = c("l","c","c","c","c"))
+```
+
+The above data indicates that from the months of October to February the information acquired from the student unemployment rate is drastically low compared to the other group
+
+## EMPLOYMENT RATE
+The rate at which students in and non-students are being employed in the Canadian government is high. The data below illustrates the assertion above;
+
+```{r}
+students<-c("students and non-students","Students","Full-time students","Part-time students","Non-students")
+October<-c("56","42.7","40.7","73.4","79.5")
+November<-c("56.1","44.6","42.7","73.4","77.1")
+December<-c("56.5","44.8","43.2","70.3","78.2")
+January<-c("51.4","39.2","37.3","68.7","71.5")
+February<-c("54.6","43.4","41.4","71","75.8")
+students<-data.frame(students,October,November,December,January,February)
+students
+knitr::kable(students,"pipe",align = c("l","c","c","c","c"))
+```
+
+It shows that the student who are on their part time basis are more advantageous when it come to part time work than any other students.
+
+# RESULTS
+At this section tyhe focus was mainly on the summary statistics of the data in both the employment and the unemployemnt data. An R code was run to identify the figure below;
+
+```{r}
+summary(students)
+
+```
+```{r}
+summary(students)
+summary(December)
+```
+```{r}
+x<-c("1","2","3","4","5")
+y<-c("56","42.7","40.7","73.4","79.5")
+y1<-c("56.1","44.6","42.7","73.4","77.1")
+y2<-c("56.5","44.8","43.2","70.3","78.2")
+y3<-c("51.4","39.2","37.3","68.7","71.5")
+y4<-c("54.6","43.4","41.4","71","75.8")
+plot(x,y,type="l",main = "A gaph of students employment rate",xlab = "Students",ylab = "Employment rate")
+lines(x,y1,type = "l",col="2")
+lines(x,y2,type = "l",col="3")
+lines(x,y3,type = "l",col="4")
+lines(x,y4,type = "l",col="4")
+legend("topleft",c("y","y1","y2","y3","y4"),fill=c("1","2","3","4","5"))
+
+
+```
+
+# DISCUSSIONS
+From the above data we can indeed say that there was a high percentage of students on part time basis working. This clearly indicates that there has been some time put aside for such individual to attend to their normalcy. The data is given in terms of percentages. from the unemployment sector there has been a lower rate in terms students attending to the employment sectors. this also shows that  indeed there is always a greater advantage to students who actually focus on their daily academic life. 
+As from the above graphical work the graphs indicates how the student enrollment aided in the labor force of the community at large. the symbols used include y,y1,y2,y3,y4. this indicates the students enrollment as from the data section above. From this data，the most influential part of this paper is that we are focusing on the data majorly because the current population that is actually aiding to the modern development of the worlds most powerful companies is the youths. Once a strict and pointing focus is made on such an area its easy to control the production sector of th country. In this current system of the world employment sectors, it is easy to manipulate students in order to join the work force. This is so because they are easily enticed with cheap salary and also their work is largely increased in terms of the production input.
+In the coming future students actually should be given a higher priority in terms of labor giving as they deliver the best in terms of service delivery. Further, they are securing the place as their only source of income.
+    
+# PREDICTION OF THE DATA
+As from the data we can say that the employment rate is promising in such a way that the concurrent years there is going to be a huge turnout in the employment rates. From the graph, in the months of May, April, June and above there is going to be high. This might be due to the increasing number of individuals in the market sector. Also there might have been increased number of vacancies in the job sector. 
+
+
+
+# APPENDIX
+## REFERENCES
+1. Statistics Canada. Table 14-10-0021-01. Unemployment rate, participation rate, and employment rate by type of student during school months, monthly,
+[https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410002101](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410002101)
+2. Yihui Xie (2021). knitr: A General-Purpose Package for Dynamic Report Generation in R. R
+  package version 1.37.
+
+## SAMPLE SURVEY
+Questionnaire for the Canadian General Survey in 2021 List of students who live in the house and their relationships with one another 
+1. That are the students who live in the residence? Every student in the residence was questioned about their first and last names (including non-students)
+Residents of institutions and boarding schools
+
+2. What is your current job situation?
+
+3. What is your job title? Are there folks who used to live in the residence students who are no longer there? If they say yes, what do they study? must be included)
+
+4. Did any of the persons in the house have a secondary location where they stayed most nights in December? If 'yes,' who is it?
+(If 'no,' proceed to Question No. 10)
+
+5. Where was the additional address
+
+Identifying data and demographic data 10. Sex: male or female?
+
+11. What is the number of your Identity Card? 
+
+12. What is your passport number? (This question will only be asked of people with no
+Canadian Identity Card)
+
+13. What is your birth date (Hebrew or Latin)? Day, month and year
+
+14. What country were you born in, according to current borders?
